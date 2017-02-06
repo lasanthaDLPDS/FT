@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="Orders.xsl"?>
+<!--
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<Orders Month="Feb">
+
+    <Country>Sri Lanka</Country>
+    <Customers>
+        <Customer CustomerID="001v">
+            <Name>Saman Jayantha</Name>
+            <Phone>0777 100200</Phone>
+            <FullAddress>
+                <Address>120 Colombo</Address>
+                <City>Colombo</City>
+                <PostalCode>123</PostalCode>
+                <Country>LK</Country>
+            </FullAddress>
+        </Customer>
+        <Customer CustomerID="002v">
+            <Name>Nimal Lokuge</Name>
+            <Phone>0777 200100</Phone>
+            <FullAddress>
+                <Address>99/A Kandy</Address>
+                <City>Kandy</City>
+                <PostalCode>456</PostalCode>
+                <Country>LK</Country>
+            </FullAddress>
+        </Customer>
+    </Customers>
+
+    <Companies>
+        <Company Company_ID="c001">
+            <CompanyName>Lanka Food Market</CompanyName>
+        </Company>
+        <Company Company_ID="c002">
+            <CompanyName>NFS</CompanyName>
+        </Company>
+    </Companies>
+
+    <Employees>
+        <Employee EmployeeID="6">
+            <CompanyID>c001</CompanyID>
+            <EmployeeName>Asanka Fernando</EmployeeName>
+            <JobTitle>Marketing Manager</JobTitle>
+        </Employee>
+        <Employee EmployeeID="7">
+            <CompanyID>c002</CompanyID>
+            <EmployeeName>Kasun Lakmal</EmployeeName>
+            <JobTitle>Marketing Manager</JobTitle>
+        </Employee>
+    </Employees>
+
+    <AvailableOrders>
+        <Order OrderID="feb001sl">
+            <CustomerID>001v</CustomerID>
+            <EmployeeID>6</EmployeeID>
+            <OrderDate>01-02-2017</OrderDate>
+            <RequiredDate>10-02-2017</RequiredDate>
+            <ShipInfo ShippedDate="03-02-2017">
+                <CompanyID>c001</CompanyID>
+            </ShipInfo>
+        </Order>
+        <Order OrderID="feb002sl">
+            <CustomerID>001v</CustomerID>
+            <EmployeeID>7</EmployeeID>
+            <OrderDate>01-02-2016</OrderDate>
+            <RequiredDate>10-02-2016</RequiredDate>
+            <ShipInfo ShippedDate="03-02-2016">
+                <CompanyID>c002</CompanyID>
+            </ShipInfo>
+        </Order>
+    </AvailableOrders>
+
+</Orders>

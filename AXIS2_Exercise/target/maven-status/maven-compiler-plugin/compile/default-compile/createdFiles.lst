@@ -1,0 +1,5 @@
+org/wso2/axis2/services/base/Stock.class
+org/wso2/axis2/services/base/Order.class
+org/wso2/axis2/services/OrderProcessingService.class
+org/wso2/axis2/services/base/Product.class
+org/wso2/axis2/services/base/Customer.class

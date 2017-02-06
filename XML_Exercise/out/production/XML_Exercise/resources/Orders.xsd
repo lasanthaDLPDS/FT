@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Orders">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="Country"/>
+                <xs:element name="Customers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Customer" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="Name"/>
+                                        <xs:element type="xs:string" name="Phone"/>
+                                        <xs:element name="FullAddress">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Address"/>
+                                                    <xs:element type="xs:string" name="City"/>
+                                                    <xs:element type="xs:short" name="PostalCode"/>
+                                                    <xs:element type="xs:string" name="Country"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="CustomerID" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Companies">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Company" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="CompanyName"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="Company_ID" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Employees">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Employee" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="CompanyID"/>
+                                        <xs:element type="xs:string" name="EmployeeName"/>
+                                        <xs:element type="xs:string" name="JobTitle"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="EmployeeID" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="AvailableOrders">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Order" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="CustomerID"/>
+                                        <xs:element type="xs:byte" name="EmployeeID"/>
+                                        <xs:element type="xs:string" name="OrderDate"/>
+                                        <xs:element type="xs:string" name="RequiredDate"/>
+                                        <xs:element name="ShipInfo">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="CompanyID"/>
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:string" name="ShippedDate" use="optional"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="OrderID" use="optional"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="Month"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
